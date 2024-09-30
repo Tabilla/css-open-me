@@ -3,16 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date App</title>
+    <title>Date Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <h1>Can I Court You?</h1>
-    <p>This is a simple C++ application that asks you out on a date!</p>
-    <h2>How to Run</h2>
-    <ol>
-        <li>Clone this repository.</li>
-        <li>Open the project in your preferred IDE.</li>
-        <li>Build and run the application.</li>
-    </ol>
+    <p>This is a simple proposal application!</p>
+    <button id="yesBtn">YES</button>
+    <button id="noBtn">NO</button>
+    <p id="response"></p>
+
+    <script>
+        document.getElementById("yesBtn").onclick = function() {
+            document.getElementById("response").innerText = "Great! See you tomorrow at 8 PM!";
+        };
+
+        document.getElementById("noBtn").onclick = function() {
+            const randomX = Math.floor(Math.random() * (window.innerWidth - 100));
+            const randomY = Math.floor(Math.random() * (window.innerHeight - 100));
+            const noBtn = document.getElementById("noBtn");
+            noBtn.style.position = "absolute";
+            noBtn.style.left = randomX + "px";
+            noBtn.style.top = randomY + "px";
+        };
+    </script>
 </body>
 </html>
